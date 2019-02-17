@@ -20,7 +20,10 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-%abhi : J0=(-1/m)sum from 1 to m (yilog(sigmoid(z))+(1-yi)log(1-sigmoid(z)))
+%abhi : J0=(-1/m)sum from 1 to m 
+%              {
+%               (yilog(sigmoid(z))+(1-yi)log(1-sigmoid(z)))
+%              }
 z=X*theta;
 J=(-1/m)*(y'*log(sigmoid(z))+(1-y)'*log(1-sigmoid(z)));
 

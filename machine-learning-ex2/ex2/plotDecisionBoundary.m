@@ -10,21 +10,28 @@ function plotDecisionBoundary(theta, X, y)
 
 % Plot Data
 plotData(X(:,2:3), y);
+fprintf('let see what i plot');
+pause;
 hold on
 
 if size(X, 2) <= 3
+    X(:,2)
     % Only need 2 points to define a line, so choose two endpoints
-    plot_x = [min(X(:,2))-2,  max(X(:,2))+2];
+    plot_x = [min(X(:,2))-2,  max(X(:,2))+2]
 
     % Calculate the decision boundary line
-    plot_y = (-1./theta(3)).*(theta(2).*plot_x + theta(1));
-
+    plot_y = (-1./theta(3)).*(theta(2).*plot_x + theta(1))
+    
     % Plot, and adjust axes for better viewing
     plot(plot_x, plot_y)
+   % Abhi : I tried plotting my data for checking boundary with zero intercept
+   % myx1=[0 122.140];
+   % myx2=[125.1791 0];
+   % plot(myx1, myx2);
     
     % Legend, specific for the exercise
     legend('Admitted', 'Not admitted', 'Decision Boundary')
-    axis([30, 100, 30, 100])
+    axis([0, 130, 0, 130])
 else
     % Here is the grid range
     u = linspace(-1, 1.5, 50);

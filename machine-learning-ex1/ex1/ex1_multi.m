@@ -52,7 +52,7 @@ fprintf('Normalizing Features ...\n');
 [X mu sigma] = featureNormalize(X);
 
 % Add intercept term to X
-X = [ones(m, 1) X];
+X = [ones(m, 1) X]
 
 
 %% ================ Part 2: Gradient Descent ================
@@ -95,6 +95,51 @@ plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
 xlabel('Number of iterations');
 ylabel('Cost J');
 
+%
+%
+%  Reiterate the graphs for different alpha
+%
+%
+alpha=[0.100 0.010 0.001 1.000 0.030]
+clr=['r' 'b' 'c' 'g' 'y'];
+
+for z=1:size(alpha,2)
+  
+num_iters = 500;
+
+% Init Theta and Run Gradient Descent 
+theta = zeros(3, 1);
+[theta, J_history] = gradientDescentMulti(X, y, theta, alpha(1,z), num_iters);
+
+% Plot the convergence graph
+%figure;
+hold on;
+plot(1:numel(J_history), J_history, strcat('-',clr(1,z)), 'LineWidth', 2);
+xlabel('Number of iterations');
+ylabel('Cost J');
+%tt[1,z]=strcat('alpha is:',num2str(alpha(1,z)));
+%fprintf(ttemp);
+
+
+% print error also
+
+price = 0; % You should change this
+X_pred=[1650 3];
+X_pred=X_pred.-mu;
+X_pred=X_pred./sigma;
+X_pred=[ones(size(X_pred,1)) X_pred];
+price=X_pred*theta;
+
+% ============================================================
+
+fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
+         '(using gradient descent):\n $%f and alpha=%f\n'], price, alpha(1,z));
+         title('Plot with various alpha');
+         
+  
+endfor
+
+
 % Display gradient descent's result
 fprintf('Theta computed from gradient descent: \n');
 fprintf(' %f \n', theta);
@@ -105,7 +150,11 @@ fprintf('\n');
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
 price = 0; % You should change this
-
+X_pred=[1650 3];
+X_pred=X_pred.-mu;
+X_pred=X_pred./sigma;
+X_pred=[ones(size(X_pred,1)) X_pred];
+price=X_pred*theta;
 
 % ============================================================
 
@@ -150,7 +199,9 @@ fprintf('\n');
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
-
+X_pred=[1650 3];
+X_pred=[ones(size(X_pred,1)) X_pred];
+price=X_pred*theta;
 
 % ============================================================
 
