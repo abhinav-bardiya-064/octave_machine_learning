@@ -1,0 +1,4 @@
+This exercise consist of:
+
+1. Regularized liner regression.
+2. Bias and variance analysis.

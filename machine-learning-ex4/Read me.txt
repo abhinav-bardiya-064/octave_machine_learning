@@ -1,0 +1,6 @@
+This exercise consist of:
+
+1. Neural network backword propogation.
+2. Calculating thetas/ weights of Neural network.
+3. Data set consist of nummbers 0-9.
+4. Visulaisation hidden layer.

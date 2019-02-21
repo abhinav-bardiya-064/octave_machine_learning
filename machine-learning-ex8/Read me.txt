@@ -1,0 +1,4 @@
+This exercise consist of:
+
+1. Anamoly detection. (finding out outperforming server)
+2. Recommender system. (Moviee rating system)

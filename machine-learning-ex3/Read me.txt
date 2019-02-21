@@ -1,0 +1,4 @@
+This exercise consist of:
+
+1. Multiclass classification. One vs All method.
+2. Neural network forward proportion.

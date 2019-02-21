@@ -1,0 +1,4 @@
+This exercise contais:
+1.Logistic regresiion with two variables.(univariate analysis)
+2.Plotting of data points and decision boundary.
+3.With multiple variables. (Multivariate analysis)

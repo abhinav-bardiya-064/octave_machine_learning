@@ -1,0 +1,8 @@
+This exercise consist of:
+1.Linear regression with one varaible. (univariate analysis of house price predection)
+2.Gradientd descents and cost functions.
+3.Linear regression with multiple variables.
+4.House price predection with Y=price , x1=sq feet area, X2=no of bedrooms.
+5.Plotting of 2d and 3d data, i.e Theta1 & Theta2 against Y(output).
+6.Contour plotting.
+

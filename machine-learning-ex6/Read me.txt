@@ -1,0 +1,4 @@
+This exercise consist of:
+
+1. Support vector machine / Large margin classifier.
+2. Spam filteration.
